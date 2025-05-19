@@ -10,6 +10,7 @@
 
 #include "mt7986a.dtsi"
 
+/ {
 	model = "JDCloud RE-CP-03";
 	compatible = "jdcloud,re-cp-03", "mediatek,mt7986a";
 
