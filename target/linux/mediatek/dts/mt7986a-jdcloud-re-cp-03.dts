@@ -10,7 +10,6 @@
 
 #include "mt7986a.dtsi"
 
-/ {
 	model = "JDCloud RE-CP-03";
 	compatible = "jdcloud,re-cp-03", "mediatek,mt7986a";
 
@@ -23,9 +22,8 @@
 	};
 
 	chosen {
-		bootargs-override = "root=/dev/fit0 rootwait";
+		bootargs-append = " root=PARTLABEL=rootfs rootwait";
 		stdout-path = "serial0:115200n8";
-		rootdisk = <&emmc_rootdisk>;
 	};
 
 	memory@40000000 {
@@ -198,10 +196,6 @@
 							#nvmem-cell-cells = <1>;
 						};
 					};
-				};
-
-				emmc_rootdisk: block-partition-production {
-					partname = "production";
 				};
 			};
 		};
